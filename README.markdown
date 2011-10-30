@@ -7,7 +7,7 @@ It never made it to a 1.0 stable version. Use it at your own risk and write lots
 
 ..So why I am trying to make it Rails 3 compatible? Well, I have an application which uses
 this code, and as I'd like to upgrade it to Rails 3 I guess I should keep this code base up
-to date too. But, you might want to think twice if you want to use this in your new and 
+to date too. But, you might want to think twice if you want to use this in your new and
 shining Rails 3 application..
 
 
@@ -33,11 +33,11 @@ Destroying
 Calling `destroy` should work as you expect, only it doesn't actually delete the record:
 
     User.count  #=> 1
-    
+
     User.first.destroy
-    
+
     User.count  #=> 0
-    
+
     # user is still there, only hidden:
     User.count_with_destroyed  #=> 1
 
@@ -53,9 +53,9 @@ Restoring
 No sense in keeping the data if we can't restore it, right?
 
     user = User.find_with_destroyed(:first)
-    
+
     user.restore
-    
+
     User.count  #=> 1
 
 Restoring resets the "deleted_at" value back to `nil`.
